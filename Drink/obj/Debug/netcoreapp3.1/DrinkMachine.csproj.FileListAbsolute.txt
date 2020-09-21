@@ -1,0 +1,8 @@
+C:\Users\ahmed\source\repos\BaverageApp\Drink\bin\Debug\netcoreapp3.1\DrinkMachine.deps.json
+C:\Users\ahmed\source\repos\BaverageApp\Drink\bin\Debug\netcoreapp3.1\DrinkMachine.dll
+C:\Users\ahmed\source\repos\BaverageApp\Drink\bin\Debug\netcoreapp3.1\DrinkMachine.pdb
+C:\Users\ahmed\source\repos\BaverageApp\Drink\obj\Debug\netcoreapp3.1\DrinkMachine.AssemblyInfoInputs.cache
+C:\Users\ahmed\source\repos\BaverageApp\Drink\obj\Debug\netcoreapp3.1\DrinkMachine.AssemblyInfo.cs
+C:\Users\ahmed\source\repos\BaverageApp\Drink\obj\Debug\netcoreapp3.1\DrinkMachine.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\source\repos\BaverageApp\Drink\obj\Debug\netcoreapp3.1\DrinkMachine.dll
+C:\Users\ahmed\source\repos\BaverageApp\Drink\obj\Debug\netcoreapp3.1\DrinkMachine.pdb

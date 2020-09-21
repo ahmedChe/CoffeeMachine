@@ -1,0 +1,71 @@
+<button class="btn btn-primary" (click)="logout()">logout</button>
+<div class="col-md-6 offset-md-3 mt-5">
+
+  <div class="card">
+    <h4 class="card-header">{{title}}</h4>
+    <div class="card-body">
+      <form #drinkForm="ngForm" (ngSubmit)=" drinkForm.form.valid && submit()">
+        <div class="form-row">
+          <div *ngFor="let d of (drinks$|async)">
+            <div class="col-sm">
+              <div class="form-group">
+                <div class="col-sm"><label for="drink">{{d}}</label></div>
+                <div class="col-sm"><input type="radio" value="{{d}}" name="drink" [(ngModel)]="model.drink"
+                    class="form-control" ngModel required
+                    [ngStyle]="{'height':'35px','width':'35px', 'vertical-align':'middle'}" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sugar">Sugar</label>
+          <input type="number" name="sugar" [(ngModel)]="model.sugar" class="form-control" ngModel required>
+        </div>
+        <div class="form-group">
+          <div class="card">
+            <h4 class="card-header">Mug</h4>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm"> <label for="mug">Standard</label></div>
+                <div class="col-sm"> <input type="radio" [value]="false" name="mug" [(ngModel)]="model.mug"
+                    class="form-control" ngModel required>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-sm"><label for="drink">Mine</label></div>
+                <div class="col-sm">
+                  <input type="radio" [value]="true" name="mug" [(ngModel)]="model.mug" class="form-control" ngModel>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div *ngIf="drinkForm.form.dirty && drinkForm.form.invalid" class="alert alert-danger">
+            <div *ngIf="drinkForm.form.controls.drink.errors?.required">Vous devez choisir votre boisson.</div>
+            <div *ngIf="drinkForm.form.controls.sugar.errors?.required">Vous devez choisir votre préciser la quantité du
+              sucre à pourvoir.</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+      <div *ngIf="successMessage" class="alert alert-success">
+        {{successMessage}}
+      </div>
+    </div>
+    <nav *ngIf='exist' aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Welcome Back</li>
+      </ol>
+      <div class="card">
+        <h4 class="card-header">Quick Order</h4>
+        <div class="card-body">
+          <h4>You want to order {{ model.drink }} with {{model.sugar}} pieces of sugar
+            {{model.mug? 'on your personal mug':''}}</h4>
+          <button class="btn btn-primary" (click)="submit()">Order now</button>
+        </div>
+      </div>
+    </nav>
+    
+  </div>

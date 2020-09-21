@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "pqsehJhWq9B7GNVlpUjllPamgTAhwF9lQc1hM22cc2j64f6Nv77fnw5+XSQuHM4wO8l8C/1RHF9jW8Z5NCkGOQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ahmed\\source\\repos\\BaverageApp\\DAL\\DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ahmed\\.nuget\\packages\\npgsql\\4.0.11\\npgsql.4.0.11.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
