@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using BL.AutoMapper;
 using DAL.References;
 using DataModel;
 using DomainModel;
@@ -12,19 +13,13 @@ namespace BL
     public class DrinkService
     {
         private DrinkReference ds;
-        private IMapper _mapper;
+        private IMapper mapper;
         public Dictionary<string, IDrinkFactory> drinkFactories = new Dictionary<string, IDrinkFactory>();
         public DrinkService()
         {
             MachineSystemSetup();
             ds = new DrinkReference();
-            var config = new MapperConfiguration(x =>
-            {
-                x.CreateMap<ChoiceDTO, Choice>();
-                x.CreateMap<Choice, ChoiceDTO>();
-            });
-
-            _mapper = config.CreateMapper();
+            mapper = AutoMapperConfiguration.GetMapper();          
         }
         private void MachineSystemSetup()
         {
@@ -51,13 +46,13 @@ namespace BL
         public void SaveDrink(ChoiceDTO choice, string username)
         {
             PrepareDrink(choice);
-            Choice choiceModel = _mapper.Map<Choice>(choice);
+            Choice choiceModel = mapper.Map<Choice>(choice);
             ds.InsertChoice(choiceModel, username);
         }
         public ChoiceDTO GetLastChoice(string username)
         {
             Choice c = ds.ReturningUserChoice(username);
-            ChoiceDTO choice = _mapper.Map<ChoiceDTO>(c);
+            ChoiceDTO choice = mapper.Map<ChoiceDTO>(c);
             return choice;
         }
         private void PrepareDrink(ChoiceDTO choice)

@@ -3,26 +3,22 @@ using DataModel;
 using DomainModel;
 using DAL.References;
 using AutoMapper;
+using BL.AutoMapper;
 
 namespace BL
 {
    public class UserService
     {
         private ClientReference clr;
-        private  IMapper _mapper;
+        private  IMapper mapper;
         public UserService()
         {
             clr = new ClientReference();
-            var config = new MapperConfiguration(x =>
-            {
-                x.CreateMap<ClientDTO,Client>();
-            });
-
-            _mapper = config.CreateMapper();
+            mapper = AutoMapperConfiguration.GetMapper();
         }
         public void RegisterUser(ClientDTO c)
         {
-            Client client = _mapper.Map<Client>(c);
+            Client client = mapper.Map<Client>(c);
             clr.InsertUSer(client);
         }
 

@@ -35,20 +35,7 @@ namespace DAL.References
                 cmd.Parameters.AddWithValue("username", username);
 
 
-                using (var con = new NpgsqlConnection(ConnectDb.GetConnectionString()))
-                {
-                    cmd.Connection = con;
-                    con.Open();                
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (!reader.HasRows)
-                        {
-                            return null;
-                        }
-                        reader.Read();
-                        return new Choice(reader.GetString(0), reader.GetInt32(1), reader.GetBoolean(2));
-                    }
-                }
+                return (Choice)ConnectDb.ReturningOneResult<Choice>(cmd);
             }
         }
     }

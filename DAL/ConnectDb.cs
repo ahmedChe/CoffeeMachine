@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using DAL.Extensions;
+using Npgsql;
 using System;
 using System.Data.SqlClient;
 
@@ -31,6 +32,24 @@ namespace DAL
 
             }
         }
+        public static object ReturningOneResult<T>(NpgsqlCommand cmd)
+        {
+            using (var con = new NpgsqlConnection(cnx))
+            {
+                cmd.Connection = con;
+                con.Open();
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (!reader.HasRows)
+                    {
+                        return null;
+                    }
+                    reader.Read();
+                    return reader.CreateModel<T>();
+                }
+            }
+        }
+        
 
     }
 }

@@ -12,6 +12,10 @@ namespace DataModel
             Sugar = sugar;
             Mug = mug;
         }
+        public Choice()
+        {
+
+        }
        public string Drink { get; set; }
        public int Sugar { get; set; }
        public bool Mug { get; set; }

@@ -40,7 +40,7 @@ namespace TestProject
 
             //Assert
            Assert.IsTrue(ds.drinkFactories.Count==3);
-            Assert.IsTrue(ds.drinkFactories["Tea"].GetType() == typeof(TeaFactory));
+            Assert.IsTrue(ds.drinkFactories["Coffee"].GetType() == typeof(CoffeeFactory));
         }
     }
 }
