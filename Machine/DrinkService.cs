@@ -13,6 +13,7 @@ namespace BL
     {
         private DrinkReference ds;
         private IMapper _mapper;
+        public Dictionary<string, IDrinkFactory> drinkFactories = new Dictionary<string, IDrinkFactory>();
         public DrinkService()
         {
             MachineSystemSetup();
@@ -25,7 +26,6 @@ namespace BL
 
             _mapper = config.CreateMapper();
         }
-    private Dictionary<string,IDrinkFactory> drinkFactories = new Dictionary<string, IDrinkFactory>(StringComparer.InvariantCultureIgnoreCase);
         private void MachineSystemSetup()
         {
             string drink;
@@ -38,7 +38,7 @@ namespace BL
                 }
             }
         }
-        private Drink SetDrink(string drink)
+        public Drink SetDrink(string drink)
         {
             if (drinkFactories.ContainsKey(drink))
                 return drinkFactories[drink].Prepare();

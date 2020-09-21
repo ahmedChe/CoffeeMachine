@@ -10,21 +10,21 @@ namespace BL
          Drink Prepare();
     }
 
-    internal class CoffeeFactory : IDrinkFactory
+    public class CoffeeFactory : IDrinkFactory
     {
         public Drink Prepare()
         {
             return new Coffee();
         }
     }
-    internal class TeaFactory : IDrinkFactory
+    public class TeaFactory : IDrinkFactory
     {
         public Drink Prepare()
         {
             return new Tea();
         }
     }
-    internal class ChoclateFactory : IDrinkFactory
+    public class ChoclateFactory : IDrinkFactory
     {
         public Drink Prepare()
         {
